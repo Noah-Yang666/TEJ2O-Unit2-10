@@ -38,8 +38,11 @@ input.onButtonPressed(Button.A, function () {
         myNeopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Red))
     }
     myNeopixelStrip.show()
-    
-    // closing simulation
+})
+
+
+// closing simulation
+input.onButtonPressed(Button.A, function () {
     basic.clearScreen()
     myNeopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
     myNeopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
