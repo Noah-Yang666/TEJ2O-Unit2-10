@@ -18,6 +18,9 @@ myNeopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Black))
 
 // simulating code for lighting up neopixels
 input.onButtonPressed(Button.A, function () {
+    // reading and displaying light level 
+    lightLevel = input.lightLevel()
+    basic.showNumber(lightLevel)
     myNeopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
     myNeopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
     myNeopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
