@@ -9,22 +9,16 @@
 let lightLevel: number = 0
 const myNeopixelStrip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
 
-// setting up
+// setup
 basic.showIcon(IconNames.Happy)
-myNeopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
-myNeopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
-myNeopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
-myNeopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Black))
+myNeopixelStrip.clear()
+myNeopixelStrip.show()
 
-// simulating code for lighting up neopixels
+// running Button A
 input.onButtonPressed(Button.A, function () {
-    // reading and displaying light level 
     lightLevel = input.lightLevel()
-    basic.showNumber(lightLevel)
-    myNeopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
-    myNeopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
-    myNeopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
-    myNeopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Black))
+
+    myNeopixelStrip.clear()
     if (lightLevel > 52) {
         myNeopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Red))
     }
@@ -37,5 +31,16 @@ input.onButtonPressed(Button.A, function () {
     if (lightLevel > 208) {
         myNeopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Red))
     }
+
     myNeopixelStrip.show()
+
+    basic.showString("Light level is " + lightLevel)
+})
+
+// running Button B
+input.onButtonPressed(Button.B, function () {
+    basic.clearScreen()
+    myNeopixelStrip.clear()
+    myNeopixelStrip.show()
+    basic.showIcon(IconNames.Happy)
 })
