@@ -20,11 +20,12 @@ myNeopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Black))
 input.onButtonPressed(Button.A, function () {
     // reading and displaying light level 
     lightLevel = input.lightLevel()
-    basic.showNumber(lightLevel)
+    basic.showString('light level is ' + (lightLevel))
     myNeopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
     myNeopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
     myNeopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
     myNeopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Black))
+    basic.showIcon(IconNames.Happy)
     if (lightLevel > 52) {
         myNeopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Red))
     }
@@ -39,7 +40,6 @@ input.onButtonPressed(Button.A, function () {
     }
     myNeopixelStrip.show()
 })
-
 
 // closing simulation
 input.onButtonPressed(Button.B, function () {
