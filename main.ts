@@ -39,5 +39,4 @@ input.onButtonPressed(Button.A, function () {
     }
 
     myNeopixelStrip.show()
-    basic.showNumber(lightLevel)
 })
