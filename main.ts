@@ -10,6 +10,7 @@ let lightLevel: number = 0
 const myNeopixelStrip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
 
 // setup
+basic.showIcon(IconNames.Happy)
 myNeopixelStrip.clear()
 myNeopixelStrip.show()
 basic.clearScreen()
