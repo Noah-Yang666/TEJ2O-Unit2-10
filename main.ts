@@ -9,6 +9,7 @@
 let lightLevel: number = 0
 const myNeopixelStrip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
 
+
 // setup
 basic.showIcon(IconNames.Happy)
 myNeopixelStrip.clear()
@@ -19,6 +20,7 @@ basic.clearScreen()
 input.onButtonPressed(Button.A, function () {
     basic.pause(1000)
     lightLevel = input.lightLevel()
+    basic.showNumber(lightLevel)
 
     myNeopixelStrip.clear()
     if (lightLevel > 52) {
@@ -36,6 +38,12 @@ input.onButtonPressed(Button.A, function () {
 
     myNeopixelStrip.show()
 
+    basic.showString("Light level is " + lightLevel)
+})
+
+// running Button B
+input.onButtonPressed(Button.B, function () {
+    basic.clearScreen()
     basic.showNumber(lightLevel)
     myNeopixelStrip.clear()
     myNeopixelStrip.show()
